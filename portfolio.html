@@ -293,6 +293,41 @@
         padding: 1rem;
       }
 
+    /* Show hamburger, hide desktop menu */
+      .hamburger {
+      display: block;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: var(--02);
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      z-index: 2000;
+      } 
+
+      /* When menu is active */
+      .nav-menu.active {
+        display: flex;
+      }
+
+      /* Keep header compact */
+      .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 1rem;
+      }
+
+      /* Adjust logo */
+      .logo {
+        font-size: 26px;
+      }
+
+      /* Page content spacing under fixed header */
+      body {
+        padding-top: 80px;
+      }
+    }
+
       .logo {
         font-size: 28px;
         margin-bottom: 0.5rem;
@@ -334,7 +369,7 @@
       .footer-contact li {
         text-align: center;
       }
-    }
+    
   </style>
 </head>
 
@@ -343,6 +378,11 @@
   <header class="site-header">
     <div class="nav-container">
       <a class="logo" href="index.html">ANH TRAN</a>
+      
+      <button class="hamburger" aria-label="Toggle navigation">
+        ☰
+      </button>
+
       <nav class="nav-menu" id="nav-menu">
         <a href="index.html">HOME</a>
         <div class="dropdown">
@@ -441,6 +481,14 @@
       </div>
     </div>
   </footer>
+  
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
 
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    </script>
 </body>
 </html>
