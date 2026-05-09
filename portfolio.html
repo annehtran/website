@@ -287,60 +287,6 @@
     }
 
     /* === MOBILE === */
-@media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem;
-      }
-
-      .logo {
-        font-size: 28px;
-        margin-bottom: 0.5rem;
-      }
-
-      .nav-menu {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        width: 100%;
-        background-color: var(--04);
-        padding: 0;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        transition: all 0.3s ease;
-      }
-
-      .nav-menu.show {
-        max-height: 500px;
-        padding: 1rem 0;
-        opacity: 1;
-      }
-
-      .nav-menu a {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 0;
-      } 
-
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .footer-contact h3,
-      .footer-contact ul,
-      .footer-contact li {
-        text-align: center;
-      }
-    
 .hamburger {
   display: none;
   flex-direction: column;
@@ -370,7 +316,90 @@
 
 @media (max-width: 768px) {
   .hamburger { display: flex; }
-}
+
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 28px;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    background-color: var(--04);
+    padding: 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu.show {
+    max-height: 500px;
+    padding: 1rem 0;
+    opacity: 1;
+  }
+
+  .nav-menu a {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 0;
+  }
+
+  .dropdown {
+    text-align: center;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static;
+    transform: none;
+    left: auto;
+    right: auto;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    padding-top: 0.25rem;
+    min-width: unset;
+    display: none;
+    text-align: center;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+    color: var(--03);
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-contact h3,
+  .footer-contact ul,
+  .footer-contact li {
+    text-align: center;
+  }
 }
 </style>
 </head>

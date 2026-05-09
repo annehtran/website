@@ -295,91 +295,120 @@
     }
 
     /* === MOBILE === */
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem;
-      }
+  .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-      .logo {
-        font-size: 28px;
-        margin-bottom: 0.5rem;
-      }
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--02);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
 
-      .nav-menu {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        width: 100%;
-        background-color: var(--04);
-        padding: 0;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        transition: all 0.3s ease;
-      }
+.hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-      .nav-menu.show {
-        max-height: 500px;
-        padding: 1rem 0;
-        opacity: 1;
-      }
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
 
-      .nav-menu a {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 0;
-      } 
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
 
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-      }
+  .logo {
+    font-size: 28px;
+    margin-bottom: 0.5rem;
+  }
 
-      .footer-contact h3,
-      .footer-contact ul,
-      .footer-contact li {
-        text-align: center;
-      }
-    
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 4px;
-        position: absolute;
-        right: 1.5rem;
-        top: 50%;
-        transform: translateY(-50%);
-      }
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    background-color: var(--04);
+    padding: 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
 
-      .hamburger span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: var(--02);
-        border-radius: 2px;
-        transition: all 0.3s ease;
-      }
+  .nav-menu.show {
+    max-height: 500px;
+    padding: 1rem 0;
+    opacity: 1;
+  }
 
-      .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-      .hamburger.active span:nth-child(2) { opacity: 0; }
-      .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  .nav-menu a {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 0;
+  }
 
-      @media (max-width: 768px) {
-        .hamburger { display: flex; }
-      }
-    }
+  .dropdown {
+    text-align: center;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static;
+    transform: none;
+    left: auto;
+    right: auto;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    padding-top: 0.25rem;
+    min-width: unset;
+    display: none;
+    text-align: center;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+    color: var(--03);
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-contact h3,
+  .footer-contact ul,
+  .footer-contact li {
+    text-align: center;
+  }
+}
   </style>
 </head>
 
