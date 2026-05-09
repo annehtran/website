@@ -368,16 +368,9 @@
         padding: 1rem;
       }
 
-      .logo, .footer-brand h2 {
+      .logo {
         font-size: 28px;
         margin-bottom: 0.5rem;
-      }
-
-      .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 2rem;
-        top: 1rem;
       }
 
       .nav-menu {
@@ -409,23 +402,7 @@
         padding: 0.75rem 0;
       }
 
-      .insights-section { padding: 5rem 1.5rem; }
-      .insights-title { font-size: 1.6rem; }
-      .insights-grid { gap: 1.75rem; }
-      .blog-card { grid-template-columns: 1fr; gap: 1.1rem; }
-      .blog-media { aspect-ratio: 5 / 3; }
-      .blog-body { gap: 0.35rem; }
-      .blog-title { font-size: 1.4rem; }
-      .values-button { display: flex; justify-content: center; }
-      .values-button .btn-learn-more {
-        width: 100%;
-        max-width: 320px;
-        font-size: 1rem;
-        padding: 0.85rem 1rem;
-        display: inline-flex;
-        justify-content: center;
-      }
-
+      
       .intro-grid {
         flex-direction: column;
         text-align: center;
@@ -453,67 +430,6 @@
         font-size: 2rem;
       }
 
-      
-      .card, .value-card {
-        padding: 1.75rem;
-        font-size: 0.875rem;
-      }
-
-      .card h2, .value-card h3 {
-        font-size: 1.25rem;
-      }
-    
-      .card .arrow {
-        width: 22px;
-        height: 22px;
-        align-self: flex-start;
-      }
-      
-      .who-grid {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      
-      .who-title {
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 1.75rem;
-      }
-      
-      .values-title, .projects-title {
-        font-size: 1.5rem;
-        text-align: center;        
-        margin-bottom: 2.375rem;
-      }
-      
-      .who-content {
-        flex: 1 1 100%;
-      }
-      
-      .values-label, .projects-label {
-        text-align: center;
-        display: block;
-        width: 100%;
-        margin-bottom: 1.25rem;
-      }
-
-      .intro-bullets li, .card p, .who-content p, .value-card p, .project-desc {
-        font-size: 0.875rem;
-      }
-
-      .contact-title {
-        font-size: 1.625rem;
-      }
-      
-      .contact-subtitle, .contact-form input, .contact-form textarea {
-        font-size: 0.95rem;
-      }
-
-      .thank-you {
-        font-size: 1rem;
-      }
-      
       .footer-container {
         flex-direction: column;
         align-items: center;
@@ -523,6 +439,38 @@
       .footer-contact h3, .footer-nav h3, .footer-contact ul, .footer-nav ul, .footer-contact li, .footer-nav li {
         text-align: center;
       }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--02);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+}
+
     }
   </style>
 </head>
@@ -545,6 +493,11 @@
         </div>
         <a href="about.html">ABOUT ME</a>
       </nav>
+
+       <button class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-menu').classList.toggle('show');" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      
     </div>
   </header>
 
