@@ -295,6 +295,37 @@
         padding: 1rem;
       }
 
+      @media (max-width: 768px) {
+  .hamburger { display: flex; }
+}
+      
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--02);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .hamburger.active span:nth-child(2) { opacity: 0; }
+      .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
       .logo {
         font-size: 28px;
         margin-bottom: 0.5rem;
@@ -363,9 +394,7 @@
     <div class="nav-container">
       <a class="logo" href="index.html">ANH TRAN</a>
 
-      <button class="hamburger" aria-label="Toggle navigation">☰</button>
-      
-      <nav class="nav-menu" id="nav-menu">
+        <nav class="nav-menu" id="nav-menu">
         <a href="index.html">HOME</a>
         <div class="dropdown">
           <a href="portfolio.html">PROJECTS</a>
@@ -377,6 +406,11 @@
         </div>
         <a href="about.html">ABOUT ME</a>
       </nav>
+
+      <button class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-menu').classList.toggle('show');" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
     </div>
   </header>
 
