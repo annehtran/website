@@ -356,11 +356,10 @@ padding-top: 10px;
  .footer-contact li {
  text-align: center;
  }
-
+ }
  .hamburger {
  display: none;
- flex-direction: column;
- gap: 5px;
+ flex-direction: column;gap: 5px;
  background: none;
  border: none;
  cursor: pointer;
@@ -385,10 +384,10 @@ transition: all 0.3s ease;
 .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
+.hamburger { display: flex; }
 }
- }
-  </style>
+ 
+</style>
 </head>
 
 <body>
@@ -411,7 +410,7 @@ transition: all 0.3s ease;
       </nav>
 
       <button class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-menu').classList.toggle('show');" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
       </button>
 
     </div>
