@@ -101,33 +101,34 @@
 
     /* === DROPDOWN === */
     .dropdown {
-    text-align: center;
-    width: 100%;
-  }
+      position: relative;
+      display: inline-block;
+      height: 100%;
+    }
 
     .dropdown-content {
-    position: static;
-    transform: none;
-    left: auto;
-    right: auto;
-    box-shadow: none;
-    border: none;
-    background-color: transparent;
-    padding-top: 0.25rem;
-    min-width: unset;
-    display: none;
-    text-align: center;
-  }
+      display: none;
+      position: absolute;
+      background-color: var(--06);
+      border: 1px solid var(--03);
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      z-index: 1000;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.35rem;
+      width: auto;
+      min-width: 130px;
+    }
 
     .dropdown-content a {
-    display: block;
-    padding: 0.25rem 0;
-    font-size: 0.9rem;
-    color: var(--03);
-    text-align: center;
-  }
-
-  
+      text-align: center;
+      white-space: normal;
+      padding: 0.35rem 1rem;
+      display: block;
+      color: var(--02);
+      text-decoration: none;
+    }
 
     .dropdown-content a:hover {
       background-color: transparent;
